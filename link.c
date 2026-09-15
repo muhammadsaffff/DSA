@@ -16,5 +16,7 @@ void insertbeg() {
       head->next = NULL;
 
     } else {
+      nw->next = head;
+      head = nw;
     }
 }
