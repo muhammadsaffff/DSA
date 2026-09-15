@@ -8,9 +8,9 @@ struct node {
 } *head = NULL;
 
 void insertbeg() {
-    struct node *nw=(struct node*)malloc(sizeof)(struct node));
+    struct node *nw=(struct node*)malloc (sizeof(struct node));
     printf("Enter data part");
-    scanf("%d", nw->data);
+    scanf("%d", &nw->data);
     if (head == NULL) {
       head = nw;
       head->next = NULL;
@@ -19,4 +19,49 @@ void insertbeg() {
       nw->next = head;
       head = nw;
     }
+}
+
+void insertend()
+{
+  truct node *nw=(struct node*)malloc (sizeof(struct node));
+    printf("Enter data part");
+    scanf("%d", &nw->data);
+    if (head == NULL) {
+      head = nw;
+      head->next = NULL;
+    }
+    else 
+    {
+      struct node *temp=head;
+      while(temp->next!=NULL)
+      {
+        temp=temp->next;
+      }
+      temp->next=nw;
+      nw->next=NULL;
+
+    }
+}
+
+
+void delbeg()
+{
+  if(head ==NULL)
+  {
+    printf("Deletion not possible");
+
+  }
+  else
+  {
+    struct node *temp=head;
+    head=head->next;
+    free(temp);
+
+  }
+}
+
+void main()
+{
+  
+
 }
