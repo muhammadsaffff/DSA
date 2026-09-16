@@ -23,12 +23,11 @@ struct node *create(struct node *poly,struct node *nw)
         while(temp->next!=NULL)
         {
             temp=temp->next;
-
+            
         }
 
     temp->next=nw;
     nw->next=NULL;
-    poly=nw;
     return poly;
 
     }
@@ -95,14 +94,18 @@ struct node *add(struct node *poly1,struct node *poly2)
 
 void display(struct node *poly) {
     struct node *temp = poly;
-    while(temp != NULL) {
-        if(temp->next != NULL)
-            printf("%dx^%d + ", temp->co, temp->exp);
-        else
-            printf("%dx^%d", temp->co, temp->exp);
-        temp = temp->next;
-    }
-    printf("\n");
+   while(temp !=NULL)
+   {
+    
+        printf("%dx^%d",temp->co,temp->exp);
+        temp=temp->next;
+        if(temp!=NULL)
+        {
+            printf(" + ");
+        }
+   }
+
+   printf("\n");
 }
 
 void main()
