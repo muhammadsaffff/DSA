@@ -92,22 +92,17 @@ struct node *add(struct node *poly1,struct node *poly2)
 }
 
 
-void display(struct node *poly)
-{
-    struct node *temp=poly;
-    while(temp!=NULL)
-    {
-        if(temp->next!=NULL)
-        {
-            printf("%d^x%d+",temp->co,temp->exp);
-        }
-        else
-        {
-            printf("%d^x%d",temp->co,temp->exp);
 
-        }
-        
+void display(struct node *poly) {
+    struct node *temp = poly;
+    while(temp != NULL) {
+        if(temp->next != NULL)
+            printf("%dx^%d + ", temp->co, temp->exp);
+        else
+            printf("%dx^%d", temp->co, temp->exp);
+        temp = temp->next;
     }
+    printf("\n");
 }
 
 void main()
