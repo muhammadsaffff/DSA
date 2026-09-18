@@ -141,5 +141,3 @@ display(poly2);
 display(poly3);
 
 }
-
-
