@@ -57,7 +57,13 @@ void intopos()
     }
     while (!isEmpty())
     {
-        postfix[j++] = pop();
+        char leftover = pop();
+        if (leftover == '(')
+        {
+            printf("Invalid parentheses");
+            exit(1);
+        }
+        postfix[j++] = leftover;
     }
     postfix[j] = '\0';
 }
@@ -89,7 +95,7 @@ char pop()
     if (isEmpty())
     {
         printf("Stack underflow\n");
-        return '\0';
+        exit(1);
     }
     else
     {
