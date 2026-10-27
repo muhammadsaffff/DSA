@@ -31,7 +31,10 @@ void intopos()
         symbol = infix[i];
         switch (symbol)
         {
-        case '(':
+        case '(':if(s[Top]=='('){
+            printf("invalid parenthesis");
+            exit(1);
+        }
             push(symbol);
             break;
         case ')':
@@ -76,6 +79,7 @@ void push(char symbol)
     if (Top == MAX - 1)
     {
         printf("Stack overflow\n");
+        exit(1);
     }
     else
     {
@@ -89,7 +93,7 @@ char pop()
     if (isEmpty())
     {
         printf("Stack underflow\n");
-        return '\0';
+        exit(1);
     }
     else
     {
