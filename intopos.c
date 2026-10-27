@@ -31,10 +31,12 @@ void intopos()
         symbol = infix[i];
         switch (symbol)
         {
-        case '(':if(s[Top]=='('){
-            printf("invalid parenthesis");
-            exit(1);
-        }
+        case '(':
+            if (s[Top] == '(')
+            {
+                printf("invalid parenthesis");
+                exit(1);
+            }
             push(symbol);
             break;
         case ')':
