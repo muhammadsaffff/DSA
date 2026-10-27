@@ -82,6 +82,7 @@ void push(char symbol)
     if (Top == MAX - 1)
     {
         printf("Stack overflow\n");
+        exit(1);
     }
     else
     {
